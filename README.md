@@ -1,5 +1,4 @@
-# project_task_attendance
-Project Task Attendance
+#Project Task Attendance
 #V16.0.0.2
 This module aims to enhance Odoo's Attendance module with the following features:
 
