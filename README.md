@@ -9,5 +9,5 @@ Write Descriptions: Users can add descriptions for their activities during both 
 User Interface Adjustments: Modify the check-in/check-out screen to include dropdown menus for projects and tasks. Ensure dynamic linkage between project and task fields, where selecting a project filters available tasks. Provide a text box for entering descriptions.
 Data Validation
 
-![image1.png](static/description/images/image1.png)
-![image2.png](static/description/images/image2.png)
+![image1.png](project_task_attendance/static/description/images/image1.png)
+![image2.png](project_task_attendance/static/description/images/image2.png)
