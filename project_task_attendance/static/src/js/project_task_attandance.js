@@ -18,7 +18,6 @@ odoo.define('project_task_attendance.project_task_attendance', function (require
         async willStart() {
             await this._super(...arguments);
             this.projects = await this._getProjects();
-            console.log(this.projects);
         },
 
         // Asynchronous method to fetch attendance projects via RPC call
@@ -35,7 +34,6 @@ odoo.define('project_task_attendance.project_task_attendance', function (require
             const project_id = this.$("select[name='project_id']").val();
             const task_id = this.$("select[name='task_id']").val();
             const attendance_description = this.$("textarea[name='attendance_description']").val();
-            console.log("Employee",this.employee.id)
             if (! project_id){
                 $( "<p class='mt-0 mb-0 project-alert'><span><i class='fa fa-exclamation-circle'></i></span> <span class='text-danger' style='font-size:1rem;'>Please select Project.</span></p>" ).insertAfter(this.$el.find('select[name="project_id"]').parents('div.row'))
             }
@@ -80,7 +78,6 @@ odoo.define('project_task_attendance.project_task_attendance', function (require
             selectionTag += '<option></option>';
             for (const task of this.projects.task_ids) {
                 if (task.project_id == project_id) {
-                    console.log(task)
                     selectionTag += `<option value="${task.id}">${task.name}</option>`;
                 }
             }
