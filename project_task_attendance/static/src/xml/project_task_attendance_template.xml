@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Extend HrAttendanceMyMainMenu template -->
+    <t t-extend="HrAttendanceMyMainMenu">
+        <!-- Insert elements before checkin/checkout button -->
+        <t t-jquery="t[t-call='HrAttendanceCheckInOutButtons']" t-operation="before">
+            <t t-if="widget.projects and widget.projects.project_ids">
+                <!-- Project Selection -->
+	        	<div class="row mb-2">
+                    <label class="h5 mb-1" for="selectProject">Project: </label> 
+		            <select class="form-control col-lg-10" name="project_id" optional="false" required>
+	                    <option></option>
+		                <t t-foreach="widget.projects.project_ids" t-as="proj_id">
+                            <option t-att-value="proj_id.id" >
+                                <t t-esc="proj_id.name" />
+                            </option>
+		                </t>
+		            </select>
+		        </div>
+				<!-- Task Selection -->
+				<div class="row mb-2">
+					<label class="h5 mb-1" for="selectProjectTask">Task: </label> 
+					<select class="form-control col-lg-10" name="task_id" id="task_id" optional="false" required>
+						<option></option>
+						<t t-foreach="widget.projects.task_ids" t-as="task">
+							<option t-att-value="task.id"><t t-out="task.name" /></option>
+						</t>
+					</select>
+				</div>
+				<!-- Description -->
+				<div class="row mb-2">
+					<label for="attendance_description" class="h5 mb-1">Description:</label>
+						<textarea id="attendance_description" class="form-control col-lg-10" name="attendance_description" />
+				</div>
+
+
+            </t>
+        </t>
+    </t>
+</templates>

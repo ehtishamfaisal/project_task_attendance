@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View definition for the attendance tree view -->
+    <record id="view_attendance_tree_inherited" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.inherited</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <!-- Inserting additional fields after the employee_id field -->
+            <field name="employee_id" position="after">
+                <field name="project_id"/>
+                <field name="task_id"/>
+                <field name="description"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- View definition for the attendance form view -->
+    <record id="hr_attendance_view_form_inherited" model="ir.ui.view">
+        <field name="name">hr.attendance.form.inherited</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Inserting additional fields after the employee_id field -->
+            <field name="employee_id" position="after">
+                <field name="project_id"/>
+                <field name="task_id"/>
+                <field name="description"/>
+                <field name="description_log_ids" nolabel="1" colspan="2" create="0" edit="0">
+                    <tree editable="bottom" create="0" edit="0" string="Description Logs">
+                        <field name="description"/>
+                    </tree>
+                </field>
+
+            </field>
+        </field>
+    </record>
+
+</odoo>
