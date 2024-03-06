@@ -1,5 +1,5 @@
-#Project Task Attendance
-#V16.0.0.2
+# Project Task Attendance
+# V16.0.0.2
 This module aims to enhance Odoo's Attendance module with the following features:
 
 Select Project: Users can choose a specific project during check-in.
